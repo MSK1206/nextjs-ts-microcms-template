@@ -17,7 +17,7 @@ export default function Navbar() {
         <Link href="/">
           <a className="navbar-brand" onClick={hideToggle}>
             <Image
-              src="/demo.svg"
+              src="/DemoLogo.svg"
               alt="demo logo"
               width="50"
               height="50"

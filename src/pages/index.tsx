@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { NextPage } from "next";
 import SeoHead from "@/components/seohead";
 import Link from "next/link";
@@ -8,7 +9,6 @@ import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
 dayjs.extend(utc);
 dayjs.extend(timezone);
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
 type Props = {
@@ -35,7 +35,7 @@ const Home: NextPage<Props> = ({ blog }) => {
               <li key={blog.id}>
                 <Link href={`/blog/${blog.id}`}>
                   <a className={styles.postscard}>
-                    <Image
+                    <img
                       className={styles.eyecatch_img}
                       src={blog.eyecatch.url}
                       width={300}
