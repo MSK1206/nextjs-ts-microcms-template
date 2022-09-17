@@ -1,0 +1,48 @@
+import { NextPage } from "next";
+import Head from "next/head";
+import { useRouter } from "next/router";
+import type { Seo } from "@/types/seo";
+
+const SeoHead: NextPage<Seo> = ({
+  pageTitle,
+  tempTitle,
+  pageDesc,
+  og_type,
+  imgUrl,
+}) => {
+  const title = `${pageTitle} - ${tempTitle}`;
+  const desc = pageDesc;
+  const sitetype = og_type;
+  const siteUrl: string = process.env.DEFAULT_SITE_URL || "";
+  const router = useRouter();
+  const url = `${siteUrl}${router.asPath}`;
+  const ogImg = imgUrl;
+  {
+    /* 
+    Twitterでtwitter:imageを正しく表示するには、
+    microCMS側のアイキャッチ画像は1200×630pxのサイズでアップロードして下さい。
+    */
+  }
+  return (
+    <Head>
+      <title>{title}</title>
+      <meta name="description" content={desc} />
+      <meta property="og:title" content={pageTitle} />
+      <meta property="og:description" content={desc} />
+      <meta property="og:type" content={sitetype} />
+      <meta property="og:url" content={url} />
+      <meta property="og:image" content={ogImg} />
+      <meta property="og:site_name" content={tempTitle} />
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:url" content={url} />
+      <meta property="twitter:title" content={pageTitle} />
+      <meta property="twitter:description" content={desc} />
+      <meta property="twitter:image" content={ogImg} />
+      <link rel="canonical" href={url} />
+      {/* ↓ファビコンの変更は以下を編集してください。↓ */}
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
+  );
+};
+
+export default SeoHead;
