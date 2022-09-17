@@ -17,12 +17,6 @@ const SeoHead: NextPage<Seo> = ({
   const router = useRouter();
   const url = `${siteUrl}${router.asPath}`;
   const ogImg = imgUrl;
-  {
-    /* 
-    Twitterでtwitter:imageを正しく表示するには、
-    microCMS側のアイキャッチ画像は1200×630pxのサイズでアップロードして下さい。
-    */
-  }
   return (
     <Head>
       <title>{title}</title>
@@ -32,14 +26,12 @@ const SeoHead: NextPage<Seo> = ({
       <meta property="og:type" content={sitetype} />
       <meta property="og:url" content={url} />
       <meta property="og:image" content={ogImg} />
-      <meta property="og:site_name" content={tempTitle} />
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content={url} />
       <meta property="twitter:title" content={pageTitle} />
       <meta property="twitter:description" content={desc} />
       <meta property="twitter:image" content={ogImg} />
       <link rel="canonical" href={url} />
-      {/* ↓ファビコンの変更は以下を編集してください。↓ */}
       <link rel="icon" href="/favicon.ico" />
     </Head>
   );
