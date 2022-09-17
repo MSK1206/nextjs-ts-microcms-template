@@ -1,6 +1,7 @@
 import NextDocument, { Html, Head, Main, NextScript } from "next/document";
 
-class Document extends NextDocument {
+interface Props {}
+class Document extends NextDocument<Props> {
   render() {
     return (
       <Html lang="ja" prefix="og: https://ogp.me/ns#">

@@ -25,7 +25,7 @@ const Home: NextPage<Props> = ({ blog }) => {
           "このテンプレートはNext.js + TypeScript & microCMSを使用したサイトになります。"
         }
         og_type={"website"}
-        imgUrl={"/next.jpg"}
+        imgUrl="/nextdemo.jpg"
       />
 
       <main className={styles.main}>

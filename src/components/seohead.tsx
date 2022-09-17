@@ -26,6 +26,7 @@ const SeoHead: NextPage<Seo> = ({
       <meta property="og:type" content={sitetype} />
       <meta property="og:url" content={url} />
       <meta property="og:image" content={ogImg} />
+      <meta property="og:site_name" content={tempTitle} />
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content={url} />
       <meta property="twitter:title" content={pageTitle} />
